@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://mysql.default:3306/yumoto?characterEncoding=utf-8&allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://mysql.default:3306/mayohoshi?characterEncoding=utf-8&allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver

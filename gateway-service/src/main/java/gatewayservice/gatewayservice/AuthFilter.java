@@ -25,7 +25,7 @@ public class AuthFilter implements GlobalFilter {
             return exchange.getResponse().setComplete();
         }
 
-        // 3. 实际项目应调用认证服务校验 Token（此处简化示例）
+        // 3. 实际项目应调用认证服务校验 Token
         if (!isValidToken(token)) {
             exchange.getResponse().setStatusCode(HttpStatus.FORBIDDEN);
             return exchange.getResponse().setComplete();

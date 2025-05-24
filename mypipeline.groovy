@@ -2,18 +2,16 @@ pipeline {
     agent any
     environment {
         docker_registry = 'registry.cn-hangzhou.aliyuncs.com'
-//service_list ='eureka-service gateway-service product-service product-client'
         service_list = 'eureka-service'
-//version = "${env.BUILD_NUMBER}"
-//如果每次根据版本生成镜像，则将下面的去掉，用上面那个
+
         version = "latest"
     }
     stages {
         stage('Checkout') {
             steps {
                 // 拉取代码
-                withCredentials([usernamePassword(credentialsId: 'gitee-credentials', usernameVariable: 'GITEE_USERNAME', passwordVariable: 'GITEE_PASSWORD')]) {
-                    git credentialsId: 'gitee-credentials', url: 'git clone https://gitee.com/frankgy/microservice-demo-n.git', branch: 'master'
+                withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'GITHUB_USERNAME', passwordVariable: 'GITHUB_PASSWORD')]) {
+                    git credentialsId: 'github-credentials', url: 'https://github.com/IzumiMasaharu/Cloudwork-Lab.git', branch: 'main'
                 }
             }
         }

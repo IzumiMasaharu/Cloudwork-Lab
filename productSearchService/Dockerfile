@@ -2,7 +2,7 @@ FROM openjdk:8-jre-alpine
 
 LABEL maintainer=me
 ENV JAVA_ARGS="-Dfile.encoding=UTF8 -Duser.timezone=GMT+08"
-ENV JAR_FILE="productSrapSearchService.jar"
+ENV JAR_FILE="productSearchService.jar"
 
 COPY ./target/${JAR_FILE} ./
 
